@@ -47,22 +47,22 @@ class MainActivity : AppCompatActivity() {
             
             val longClickedStudent = mStudentList[position]
 
-            AlertDialog.Builder(this)
-                .setTitle("학생 삭제")
-                .setMessage("정말 ${longClickedStudent.name} 학생을 삭제하시겠습니까?")
-                .setPositiveButton("확인" ,DialogInterface.OnClickListener { dialogInterface, i ->
+            AlertDialog.Builder(this)                       // 11. 심각한 경고 (확인받고 움직이는게 좋은 로직 > AlertDialog 처리
+                .setTitle("학생 삭제")                                    // 12. etTitle("제목") //생략가능
+                .setMessage("정말 ${longClickedStudent.name} 학생을 삭제하시겠습니까?")       //13.setMessage("물어볼 내용")
+                .setPositiveButton("확인" ,DialogInterface.OnClickListener { dialogInterface, i ->    // 14. setPositiveButton("긍정 문구", Ctrl + space {
 
-                    mStudentList.remove( longClickedStudent )
+                    mStudentList.remove( longClickedStudent )            // 15. 확인시, 실행할 코드
 
-                    mAdapter.notifyDataSetChanged()
+                    mAdapter.notifyDataSetChanged()                      // 16. ArrayList 내용 변경 시 어댑터 변수도 처리할 수 있도록 반영 // 어댑터변수.notifyDataSetChanged()
 
                 })
-                .setNegativeButton("취소", null)
+                .setNegativeButton("취소", null)            // 17. setNegativeButton("부정 문구",  null 로 할일이 없다고 명시.)
                 .show()
 
-            mStudentList.remove( longClickedStudent )
+            mStudentList.remove( longClickedStudent )                    // 18. 삭제
 
-            mAdapter.notifyDataSetChanged()
+            mAdapter.notifyDataSetChanged()                              // 19. 16번과 동일하게 ArrayList 내용변경, 어댑터에 반영
             
             return@setOnItemLongClickListener true                            // 10. 롱클릭 리턴 이벤트 처리
         }
