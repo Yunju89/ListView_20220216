@@ -17,20 +17,22 @@ import org.w3c.dom.Text
 
 
 class StudentAdapter(
-    val mContext: Context,  ///강사님께 -> 어느 화면인지? Activity와 비슷한 개념 (좀더 포괄적임/)
-    val resId: Int,
-    val mList: ArrayList<StudentData>
-) : ArrayAdapter<StudentData>(mContext, resId, mList) {
+    val mContext: Context,  /// Context class, 강사님께 -> 어느 화면인지? Activity와 비슷한 개념 (좀더 포괄적임/)
+    val resId: Int,    //변수
+    val mList: ArrayList<StudentData>  //ArrayList 배열
+) : ArrayAdapter<StudentData>(mContext, resId, mList) {  // : 상속받는것
+//    ArrayAdapter 클래스 상속받는 클래스 <StudentData> 자료형
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-
-        var tempRow = convertView
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {   //fun(메소드의미) :View 타입으로 리턴
+//        getView => xml, 데이터클래스 조합 기능 구현, 우리가 만든 xml 모양으로 셋팅 (오버라이딩)
+        var tempRow = convertView      // View StudentAdapter 생성 시 받은 레이아웃 (resId)
         if (tempRow == null) {
             tempRow = LayoutInflater.from(mContext).inflate(R.layout.student_list_item,null)
+//        LayoutInflater : xml파일을 가져다 씀 (레이아웃 갖다쓰겠다)
 
         }
 
-        val row = tempRow!!
+        val row = tempRow!!   // 절대 null이 아니라는 뜻
 
         val data = mList[position]
 

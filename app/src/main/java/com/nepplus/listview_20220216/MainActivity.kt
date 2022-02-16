@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         mStudentList.add(StudentData("최재훈", 1994, "경기도 수원시"))
         mStudentList.add(StudentData("이성노", 1988, "경기도 남양주시"))
 
-        mAdapter = StudentAdapter(this,R.layout.student_list_item, mStudentList)
+        mAdapter = StudentAdapter(this, R.layout.student_list_item, mStudentList)
         studentListView.adapter = mAdapter
 
         studentListView.setOnItemClickListener { parent, view, position, id ->
