@@ -5,6 +5,12 @@
     android:orientation="vertical"
     android:padding="15dp">
 
+<!--  1. LinearLayout 그리기,
+      2. '한 칸' 에 해당할 모양만 그리기 (wrap_content)
+      3. Layout 내부에 태그 배치
+      4. java 폴더 내의 프로젝트패키지에 하위 패키지 추가 - (datas) 데이터 패키지는 따로 관리하는게 좋다.
+      4. 데이터 클래스 제작 (datas 패키지 하위 클래스)  -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
