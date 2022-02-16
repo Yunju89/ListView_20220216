@@ -11,13 +11,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var mAdapter : StudentAdapter
-    val mStudentList = ArrayList<StudentData>()
+    lateinit var mAdapter : StudentAdapter         // 3. 멤버변수 생성 (어댑터 클래스타입으로 받는)
+    val mStudentList = ArrayList<StudentData>()    // 1. ArrayList 배열 객체 멤버변수로 생성
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+//        2. 생성한 ArrayList에 add 로 담음, 리스트 뷰 연결
         mStudentList.add(StudentData("조경진", 1988, "서울시 동대문구"))
         mStudentList.add(StudentData("고재천", 1988, "서울시 중랑구"))
         mStudentList.add(StudentData("방우진", 1983, "경기도 고양시"))
@@ -30,8 +30,10 @@ class MainActivity : AppCompatActivity() {
         mStudentList.add(StudentData("최재훈", 1994, "경기도 수원시"))
         mStudentList.add(StudentData("이성노", 1988, "경기도 남양주시"))
 
+//          4. StudentAdapter 객체화 진행 어댑터변수=어댑터클래스(필요 값)
         mAdapter = StudentAdapter(this, R.layout.student_list_item, mStudentList)
-        studentListView.adapter = mAdapter
+
+        studentListView.adapter = mAdapter    // 5. 리스트뷰의 어댑터로 = 어댑터 변수 대입
 
         studentListView.setOnItemClickListener { parent, view, position, id ->
 
