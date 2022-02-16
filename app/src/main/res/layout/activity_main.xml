@@ -7,6 +7,9 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+<!--  1. ListView 태그 배치+ id 부여,
+      2.layout 폴더에 Layout Resource File 추가
+         이름 : 영소문자_숫자만 조합 가능  -->
     <ListView
         android:id="@+id/studentListView"
         android:layout_width="match_parent"
