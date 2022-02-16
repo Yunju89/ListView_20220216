@@ -35,15 +35,15 @@ class MainActivity : AppCompatActivity() {
 
         studentListView.adapter = mAdapter    // 5. 리스트뷰의 어댑터로 = 어댑터 변수 대입
 
-        studentListView.setOnItemClickListener { parent, view, position, id ->
+        studentListView.setOnItemClickListener { parent, view, position, id ->    // 6. 리스트뷰의 클릭 이벤트 : 리스트뷰.setOn"ItemClick"Listener { }
 
-            val clickedStudent = mStudentList[position]
+            val clickedStudent = mStudentList[position]                          // 7. 변수생성, 배열 담음 // 어느 줄이 눌렸는지를 position(또는 i) 변수가 알려줌
 
-            Toast.makeText(this, "${clickedStudent.name}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${clickedStudent.name}", Toast.LENGTH_SHORT).show()      // 8. 위의 변수 사용 및 활용
             
         }
         
-        studentListView.setOnItemLongClickListener { parent, view, position, id -> 
+        studentListView.setOnItemLongClickListener { parent, view, position, id ->     // 9. 길게 눌렀을 때의 이벤트 처리 (부가메뉴, 삭제, 경고 등으로 사용) -> 10번의 return 설정
             
             val longClickedStudent = mStudentList[position]
 
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
             mAdapter.notifyDataSetChanged()
             
-            return@setOnItemLongClickListener true
+            return@setOnItemLongClickListener true                            // 10. 롱클릭 리턴 이벤트 처리
         }
 
 
