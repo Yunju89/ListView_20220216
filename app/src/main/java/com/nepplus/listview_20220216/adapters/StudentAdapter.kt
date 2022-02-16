@@ -34,9 +34,9 @@ class StudentAdapter(
 
         val row = tempRow!!   // 절대 null이 아니라는 뜻
 
-        val data = mList[position]
+        val data = mList[position]      //반영할 UI : row변수의 내부 태그들 가져오기
 
-        val txtStudentName = row.findViewById<TextView>(R.id.txtStudentName)
+        val txtStudentName = row.findViewById<TextView>(R.id.txtStudentName)    //값 셋팅
         val txtAge = row.findViewById<TextView>(R.id.txtAge)
         val txtAdress = row.findViewById<TextView>(R.id.txtAdress)
 
