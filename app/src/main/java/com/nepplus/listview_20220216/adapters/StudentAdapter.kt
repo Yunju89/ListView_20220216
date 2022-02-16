@@ -15,8 +15,9 @@ import com.nepplus.listview_20220216.R
 import com.nepplus.listview_20220216.datas.StudentData
 import org.w3c.dom.Text
 
+
 class StudentAdapter(
-    val mContext: Context,
+    val mContext: Context,  ///강사님께 -> 어느 화면인지? Activity와 비슷한 개념 (좀더 포괄적임/)
     val resId: Int,
     val mList: ArrayList<StudentData>
 ) : ArrayAdapter<StudentData>(mContext, resId, mList) {
